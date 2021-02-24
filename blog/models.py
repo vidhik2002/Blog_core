@@ -17,9 +17,9 @@ class Post(models.Model):
         def get_queryset(self):
             return super().get_queryset().filter(status='published')
 
-    options = (
+    options =(
         {'draft', 'Draft'},
-    {'published', 'Published'}
+        {'published', 'Published'}
     )
 
     category = models.ForeignKey(Category, on_delete=models.PROTECT, default=1)
