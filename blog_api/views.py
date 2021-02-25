@@ -7,10 +7,12 @@ from .serializers import PostSerializer
 
 
 class PostList(generics.ListCreateAPIView):
-    query_set = Post.postobjects.all()
+    queryset = Post.postobjects.all()
     serializer_class = PostSerializer
 
 
-class PostDetails(generics.RetrieveDestroyAPIView):
-    pass
+
+class PostDetail(generics.RetrieveDestroyAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
 
